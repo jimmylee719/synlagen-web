@@ -29,11 +29,10 @@ export const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
       onNavigate('contact');
   };
 
-  // 預留外部連結點擊處理，未來提供 URL 後可直接更換
+  // 處理外部連結點擊跳轉至潤氣一頁式網頁
   const handleExternalLandingClick = (e: React.MouseEvent) => {
       e.stopPropagation();
-      // 等待您提供外部 URL 後更換為：window.open("YOUR_URL_HERE", "_blank");
-      alert("外部一頁式詳細介紹準備中，敬請期待！");
+      window.open("https://one-page-product.vercel.app/", "_blank");
   };
 
   // --- 產品單項詳細頁面 ---
@@ -70,7 +69,7 @@ export const Products: React.FC<ProductsProps> = ({ onNavigate }) => {
                             <p>{selectedProduct.description}</p>
                         </div>
 
-                        {/* 特殊行銷按鈕：潤氣 BR.EVE 專屬 (樣式同 Services CTA) */}
+                        {/* 特殊行銷按鈕：潤氣 BR.EVE 專屬 */}
                         {selectedProduct.slug === 'br-eve' && (
                             <div className="mb-10 p-6 bg-brand-50 border border-brand-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
                                 <div className="text-center sm:text-left">
